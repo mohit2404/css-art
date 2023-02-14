@@ -1,0 +1,501 @@
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    --primary: rgb(252,248,237);
+    --secondary: rgb(0,0,0);
+    --bg: rgb(243,237,225);
+    color: snow;
+    background: var(--bg);
+  }
+  body.dark {
+    --primary: rgb(0,0,0);
+    --secondary: rgb(252,248,237);
+    --bg: #242424;
+  }
+  
+  .main {
+    width: 100vw;
+    height: 100vh;
+  }
+  
+ .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    width: 100%;
+    height: 60px;
+    color: #000;
+    background: var(--primary);
+  }
+  .header .input {
+    position: absolute;
+    display: none;
+  }
+  .header .labelmsg {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 35px;
+    width: 35px;
+    height: 35px;
+    background: crimson;
+    font-size: 24px;
+    border-radius: 50%;
+  }
+  .header .labelmsg::before {
+    content: "••";
+  }
+  .header .msg {
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    height: 200px;
+    transform: scale(0.001);
+    background: var(--primary);
+    transition: transform 0.4s ease;
+    transform-origin: left top;
+    padding: 24px 30px;
+    z-index: 9;
+    color: var(--secondary);
+    font-weight: bold;
+  }
+  
+  a {
+    text-decoration: underline;
+    color: rgb(220,20,60);
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  
+  .input:checked ~ .labelmsg::before {
+    content: "×";
+  }
+  .input:checked ~ .msg {
+    top: 60px;
+    transform: scale(1);
+  }
+  
+  .header .checkbox {
+    position: absolute;
+    display: none;
+  }
+  .header .labelch {
+    position: absolute;
+    right: 35px;
+    height: 28px;
+    width: 52px;
+    background-color: var(--secondary);
+    border-radius: 50px;
+  }
+  .header .labelch .ball {
+    position: absolute;
+    top: 2px;
+    left: 2.2px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: crimson;
+    transition: all 0.2s linear;
+  }
+  .checkbox:checked + .labelch .ball {
+    transform: translateX(24px);
+    background-color: rgb(220,20,60);
+  }
+  
+  .box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  .box2 {
+    margin-top: 30px;
+  }
+  
+  .giraffe {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    transform: ;
+    background: var(--primary);
+  }
+  
+  .giraffe .nb {
+    position: absolute;
+    top: 78px;
+    left: 112px;
+    width: 48px;
+    height: 97px;
+    background: var(--primary);
+    z-index: 1;
+    border-left: 0.7px solid var(--secondary);
+    border-bottom-left-radius: 44px;
+  }
+  
+  .giraffe .horn1 {
+    position: absolute;
+    top: 68px;
+    left: 102px;
+    width: 26px;
+    height: 24px;
+    background: var(--primary);
+    z-index: 1;
+    border-bottom-left-radius: 45%;
+    border-bottom-right-radius: 52%;
+  }
+  .giraffe .horn1::before {
+    position: absolute;
+    content: "";
+    top: 9px;
+    right: 0px;
+    width: 15.3px;
+    height: 15px;
+    border-left: 0.7px solid var(--secondary);
+  }
+  
+  .giraffe .horn {
+    position: absolute;
+    top: 80px;
+    left: 93px;
+    width: 46px;
+    height: 12px;
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 22px;
+    background: var(--secondary);
+    z-index: 1;
+  }
+  .giraffe .horn::before {
+    position: absolute;
+    content: "";
+    top: -7px;
+    left: 0px;
+    width: 9px;
+    height: 7px;
+    background: var(--secondary);
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    
+  }
+  .giraffe .horn::after {
+    position: absolute;
+    content: "";
+    top: -11px;
+    right: 0px;
+    width: 11px;
+    height: 11px;
+    background: var(--secondary);
+    border-top-left-radius: 11px;
+    border-top-right-radius: 11px;
+  }
+  
+  .giraffe .mouth {
+    position: absolute;
+    top: 96px;
+    left: 96px;
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    background: crimson;
+  }
+  
+  .giraffe .gbody {
+    position: absolute;
+    top: 175px;
+    left: 112px;
+    width: 47.5px;
+    height: 68px;
+    background: var(--secondary);
+  }
+  .giraffe .gbody::before {
+     position: absolute;
+     content: "";
+     bottom: 67.6px;
+     left: 0px;
+     width: 100%;
+     height: 42.4px;
+     background: var(--secondary);
+   }
+  .giraffe .gbody::after {
+    position: absolute;
+    content: "";
+    top: 0px;
+    left: 47px;
+    width: 48px;
+    height: 100%;
+    background: var(--secondary);
+    border-top-right-radius: 50px;
+  }
+  
+  .giraffe .tail {
+    position: absolute;
+    top: 170px;
+    left: 200px;
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    background: crimson;
+  }
+  
+  .giraffe .legs {
+    position: absolute;
+    bottom: 70px;
+    left: 112px;
+    width: 95px;
+    height: 108px;
+    background: var(--primary);
+    z-index: 1;
+    border-top-right-radius: 21px;
+    border-top-left-radius: 21px;
+    border-left: 0.7px solid var(--secondary);
+    border-right: 0.7px solid var(--secondary);
+  }
+  .giraffe .legs::before {
+    position: absolute;
+    content: "";
+    left: 0px;
+    height: 100%;
+    width: 31px;
+    background: none;
+    border-top-left-radius: 21px;
+    border-right: 0.7px solid var(--secondary);
+  }
+  .giraffe .legs::after {
+    position: absolute;
+    content: "";
+    right: 0px;
+    height: 100%;
+    width: 31px;
+    background: none;
+    border-top-right-radius: 21px;
+    border-left: 0.7px solid var(--secondary);
+  }
+  
+  .flamingo {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    transform: ;
+    background: var(--primary);
+  }
+  
+  .flamingo .hair {
+    position: absolute;
+    top: 71px;
+    left: 108px;
+    width: 24px;
+    height: 24px;
+    background: var(--secondary);
+  }
+  .flamingo .hair::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: var(--primary);
+    border-bottom-right-radius: 100%;
+  }
+  
+  .flamingo .beak {
+    position: absolute;
+    top: 95px;
+    left: 73px;
+    width: 35px;
+    height: 54px;
+    background: var(--secondary);
+    border-top-left-radius: 18px;
+  }
+  .flamingo .beak::before {
+    position: absolute;
+    content: "";
+    top: 18px;
+    width: 100%;
+    height: 36px;
+    background: var(--primary);
+    border-top-left-radius: 18px;
+  }
+  
+  .flamingo .hnt {
+    position: absolute;
+    top: 95px;
+    left: 108px;
+    width: 119px;
+    height: 92px;
+    background: var(--secondary);
+    border-left: 0.5px solid var(--secondary);
+    z-index: 1;
+    outline: none;
+  }
+  .flamingo .hnt::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: var(--primary);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 25px;
+  }
+  .flamingo .hnt::after {
+    position: absolute;
+    content: "";
+    top: 5px;
+    left: 5px;
+    width: 11px;
+    height: 11px;
+    background: crimson;
+    border-radius: 50%;
+  }
+  
+  .flamingo .body {
+    position: absolute;
+    top: 144px;
+    left: 108px;
+    width: 93px;
+    height: 90px;
+    background: var(--secondary);
+    border-radius: 50%;
+  }
+  
+  .flamingo .ltlegs {
+    position: absolute;
+    top: 233px;
+    left: 141px;
+    width: 14px;
+    height: 101px;
+    background: none;
+    border-right: 0.8px solid var(--secondary);
+    border-bottom: 0.8px solid var(--secondary);
+  }
+  
+  .flamingo .rtlegs {
+    position: absolute;
+    top: 221px;
+    left: 167px;
+    transform: rotate(-57deg);
+    width: 9px;
+    height: 37px;
+    background: none;
+    border-left: 0.8px solid var(--secondary);
+  }
+  .flamingo .rtlegs::before {
+    position: absolute;
+    content: "";
+    top: 20px;
+    left: -68px;
+    transform: rotate(24deg) skew(-33deg);
+    width: 68px;
+    height: 9px;
+    background: none;
+    border-left: 0.8px solid var(--secondary);
+    border-top: 0.8px solid var(--secondary);
+  }
+  .flamingo .rtlegs::after {
+    position: absolute;
+    content: "";
+    top: 29px;
+    left: -5px;
+    width: 11px;
+    height: 11px;
+    background: crimson;
+    border-radius: 50%;
+  }
+  
+  .footer {
+    margin-top: 30px;
+    width: 100%;
+    height: 60px;
+    color: var(--secondary);
+    background: var(--primary);
+    text-align: center;
+    padding: 20px;
+    font-weight: bold;
+    line-height: 20px;
+    letter-spacing: 1px;
+  }
+  
+  @media screen and (min-width: 750px) {
+    .main {
+      width: 100vw;
+      height: 100vh;
+    }
+    .box {
+      width: 100%;
+      height: 100vh;
+    }
+    .box2 {
+      margin-top: 0px;
+    }
+    .giraffe, .flamingo {
+      transform: scale(2);
+    }
+    .header, .footer {
+      height: 90px;
+    }
+    .header {
+      margin-bottom: 0px;
+    }
+    .footer {
+      margin-top: 0px;
+    }
+    .header .label {
+      width: 60px;
+      height: 60px;
+      font-size: 32px;
+    }
+    
+    .header .msg {
+      top: 90px;
+      height: 220px;
+      font-size: 24px;
+    }
+    .input:checked ~ .msg {
+      top: 90px;
+    }
+    .footer {
+      padding: 30px;
+      line-height: 30px;
+      font-size: 24px;
+    }
+  }
+  
+  @media screen and (min-width: 1000px) {
+    .main {
+      width: 100vw;
+      height: 100vh;
+    }
+    .box {
+      width: 100%;
+      min-height: 1200px;
+    }
+    .giraffe, .flamingo {
+      transform: scale(2.4);
+    }
+    .header, .footer {
+      height: 120px;
+    }
+    .header .label {
+      width: 80px;
+      height: 80px;
+      font-size: 40px;
+    }
+    
+    .header .msg {
+      top: 120px;
+      height: 270px;
+      font-size: 30px;
+    }
+    .input:checked ~ .msg {
+      top: 120px;
+    }
+    .footer {
+      padding: 40px;
+      line-height: 40px;
+      font-size: 32px;
+    }
+  }
