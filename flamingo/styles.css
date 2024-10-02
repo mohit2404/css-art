@@ -1,0 +1,182 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  --primary: rgb(0, 0, 0);
+  --secondary: rgb(252, 248, 237);
+  --shadow: rgba(252, 248, 237, 0.25);
+  --bg: #242424;
+  color: snow;
+  background: var(--bg);
+}
+
+body.light {
+  --primary: rgb(252, 248, 237);
+  --secondary: rgb(0, 0, 0);
+  --shadow: rgba(0, 0, 0, 0.25);
+  --bg: rgb(243, 237, 225);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.flamingo {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  background: var(--primary);
+  border: 5px solid var(--secondary);
+}
+
+.flamingo .hair {
+  position: absolute;
+  top: 70.5px;
+  left: 108px;
+  width: 24px;
+  height: 24px;
+  background: var(--secondary);
+  z-index: 2;
+}
+
+.flamingo .hair::before {
+  position: absolute;
+  content: "";
+  left: -0.5px;
+  top: -0.5px;
+  width: 25px;
+  height: 25px;
+  background: var(--primary);
+  border-bottom-right-radius: 100%;
+}
+
+.flamingo .beak {
+  position: absolute;
+  top: 95px;
+  left: 73px;
+  width: 35px;
+  height: 54px;
+  background: var(--secondary);
+  border-top-left-radius: 18px;
+}
+
+.flamingo .beak::before {
+  position: absolute;
+  content: "";
+  top: 18px;
+  left: -1px;
+  width: 36px;
+  height: 38px;
+  background: var(--primary);
+  border-top-left-radius: 18px;
+}
+
+.flamingo .hnt {
+  position: absolute;
+  top: 95px;
+  left: 108px;
+  width: 118px;
+  height: 92px;
+  background: var(--secondary);
+  border-left: 0.5px solid var(--secondary);
+  z-index: 1;
+  outline: none;
+}
+
+.flamingo .hnt::before {
+  position: absolute;
+  content: "";
+  top: -1px;
+  width: 120px;
+  height: 93px;
+  background: var(--primary);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 25px;
+  /* background-color: red !important; */
+}
+
+.flamingo .hnt::after {
+  position: absolute;
+  content: "";
+  top: 5px;
+  left: 5px;
+  width: 11px;
+  height: 11px;
+  background: crimson;
+  border-radius: 50%;
+}
+
+.flamingo .body {
+  position: absolute;
+  top: 144px;
+  left: 108px;
+  width: 93px;
+  height: 90px;
+  background: var(--secondary);
+  border-radius: 50%;
+}
+
+.flamingo .ltlegs {
+  position: absolute;
+  top: 233px;
+  left: 141px;
+  width: 14px;
+  height: 101px;
+  background: none;
+  border-right: 0.8px solid var(--secondary);
+  border-bottom: 0.8px solid var(--secondary);
+}
+
+.flamingo .rtlegs {
+  position: absolute;
+  top: 221px;
+  left: 167px;
+  transform: rotate(-57deg);
+  width: 9px;
+  height: 37px;
+  background: none;
+  border-left: 0.8px solid var(--secondary);
+}
+
+.flamingo .rtlegs::before {
+  position: absolute;
+  content: "";
+  top: 20px;
+  left: -68px;
+  transform: rotate(24deg) skew(-33deg);
+  width: 68px;
+  height: 9px;
+  background: none;
+  border-left: 0.8px solid var(--secondary);
+  border-top: 0.8px solid var(--secondary);
+}
+
+.flamingo .rtlegs::after {
+  position: absolute;
+  content: "";
+  top: 29px;
+  left: -5px;
+  width: 11px;
+  height: 11px;
+  background: crimson;
+  border-radius: 50%;
+}
+
+@media (min-width: 640px) {
+  .flamingo {
+    transform: scale(1.2);
+  }
+  .flamingo .hair {
+    top: 71px;
+  }
+}
