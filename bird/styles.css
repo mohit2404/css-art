@@ -16,13 +16,6 @@ body {
   background: var(--bg);
 }
 
-body.dark {
-  --primary: rgb(0, 0, 0);
-  --secondary: rgb(252, 248, 237);
-  --shadow: rgba(252, 248, 237, 0.25);
-  --bg: #242424;
-}
-
 main {
   display: flex;
   flex-direction: column;
