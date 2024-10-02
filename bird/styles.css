@@ -1,0 +1,303 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  --primary: rgb(252, 248, 237);
+  --secondary: rgb(0, 0, 0);
+  --shadow: rgba(0, 0, 0, 0.25);
+  --bg: rgb(243, 237, 225);
+
+  color: snow;
+  background: var(--bg);
+}
+
+body.dark {
+  --primary: rgb(0, 0, 0);
+  --secondary: rgb(252, 248, 237);
+  --shadow: rgba(252, 248, 237, 0.25);
+  --bg: #242424;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.bird-box {
+  position: relative;
+  width: 360px;
+  height: 412px;
+  background: var(--primary);
+  border: 5px solid var(--secondary);
+  box-shadow: var(--shadow) 0px 25px 50px -12px;
+}
+
+.b-hairs {
+  position: absolute;
+  top: 81px;
+  left: 160px;
+  width: 50px;
+  height: 50px;
+  border-radius: 0 100% 0 0;
+  border-top: 1.4px solid var(--secondary);
+  border-right: 1.4px solid var(--secondary);
+}
+
+.b-hairs::before {
+  position: absolute;
+  content: "";
+  top: 13px;
+  width: 34px;
+  height: 34px;
+  border-radius: 0 100% 0 0;
+  border-top: 1.4px solid var(--secondary);
+  border-right: 1.4px solid var(--secondary);
+}
+
+.b-hairs::after {
+  position: absolute;
+  content: "";
+  top: 29px;
+  width: 18px;
+  height: 18px;
+  border-radius: 0 100% 0 0;
+  border-top: 1.4px solid var(--secondary);
+  border-right: 1.4px solid var(--secondary);
+}
+
+.b-hairs .hair {
+  position: absolute;
+  top: 13px;
+  left: -45px;
+  width: 45px;
+  height: 35.5px;
+  border-top: 1.4px solid var(--secondary);
+}
+
+.b-hairs .hair:before {
+  position: absolute;
+  content: "";
+  top: -9px;
+  left: -17px;
+  width: 18px;
+  height: 18px;
+  background-color: var(--secondary);
+  border-radius: 50%;
+}
+
+.b-face {
+  position: absolute;
+  top: 131px;
+  left: 85px;
+  width: 76px;
+  height: 60px;
+  background-color: var(--secondary);
+}
+
+.b-face::before {
+  position: absolute;
+  content: "";
+  left: -49px;
+  width: 50px;
+  height: 60px;
+  background-color: tomato;
+  border-radius: 100% 0 0 0;
+}
+
+.b-face::after {
+  position: absolute;
+  content: "";
+  left: 75px;
+  width: 50px;
+  height: 60px;
+  background-color: var(--secondary);
+  border-radius: 0 0 100% 0;
+}
+
+.b-face .eye {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: 20px;
+  height: 20px;
+  background-color: grey;
+  display: inline-block;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.eye-lid {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+}
+
+.bird-box:hover .eye-lid span {
+  display: block;
+  width: 100%;
+  height: 0%;
+  background-color: #242424;
+  animation: eyelid 2s infinite;
+}
+
+@keyframes eyelid {
+  0% {
+    height: 0%;
+  }
+  10% {
+    height: 100%;
+  }
+  40% {
+    height: 0%;
+  }
+  100% {
+    height: 0%;
+  }
+}
+
+.b-neck {
+  position: absolute;
+  top: 189px;
+  left: 72px;
+  width: 89px;
+  height: 75px;
+  border-radius: 100% 0 0 0;
+  border-left: 1.4px solid var(--secondary);
+  border-top: 1.4px solid var(--secondary);
+}
+
+.b-neck::after {
+  position: absolute;
+  content: "";
+  top: 87px;
+  left: -1px;
+  width: 80px;
+  height: 75px;
+  border-radius: 0 0 100% 0;
+  border-right: 1.4px solid var(--secondary);
+  border-bottom: 1.4px solid var(--secondary);
+}
+
+.b-body {
+  position: absolute;
+  top: 220px;
+  left: 117px;
+  width: 124px;
+  height: 90px;
+  background-color: var(--secondary);
+  border-radius: 0 0 100% 0;
+}
+
+.b-body::before {
+  position: absolute;
+  content: "";
+  left: -45px;
+  width: 90px;
+  height: 90px;
+  background-color: inherit;
+  border-radius: 50%;
+}
+
+.b-wing {
+  position: absolute;
+  top: 250px;
+  left: 162px;
+  width: 76px;
+  height: 60px;
+  background-color: tomato;
+}
+
+.b-wing::before {
+  position: absolute;
+  content: "";
+  left: -49px;
+  width: 50px;
+  height: 60px;
+  background-color: inherit;
+  border-radius: 100% 0 0 0;
+}
+
+.b-wing::after {
+  position: absolute;
+  content: "";
+  left: 75px;
+  width: 50px;
+  height: 60px;
+  background-color: inherit;
+  border-radius: 0 0 100% 0;
+}
+
+.b-leg {
+  position: absolute;
+  top: 310px;
+  left: 148px;
+  width: 16px;
+  height: 43px;
+  border-right: 1.4px solid var(--secondary);
+  border-bottom: 1.4px solid var(--secondary);
+}
+
+.b-tail {
+  position: absolute;
+  top: 129.5px;
+  left: 241px;
+  width: 46px;
+  height: 46px;
+  background-color: var(--secondary);
+}
+
+.b-tail::before {
+  position: absolute;
+  content: "";
+  top: -45px;
+  width: 46px;
+  height: 46px;
+  background-color: inherit;
+  border-radius: 100% 0 0 0;
+}
+
+.b-tail::after {
+  position: absolute;
+  content: "";
+  top: 45px;
+  width: 46px;
+  height: 46px;
+  background-color: inherit;
+  border-radius: 0 0 100% 0;
+}
+
+.b-tail .tail {
+  position: absolute;
+  top: 23px;
+  width: 82px;
+  height: 68px;
+  border-radius: 0 0 100% 0;
+  border-right: 1.4px solid var(--secondary);
+  border-bottom: 1.4px solid var(--secondary);
+}
+
+.b-tail .tail::before {
+  position: absolute;
+  content: "";
+  top: -9px;
+  left: 72px;
+  width: 18px;
+  height: 18px;
+  background-color: var(--secondary);
+  border-radius: 50%;
+}
+
+@media (min-width: 640px) {
+  .bird-box {
+    transform: scale(1.2);
+  }
+}

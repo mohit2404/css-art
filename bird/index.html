@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flamingo Art</title>
+    <link rel="stylesheet" href="styles.css" media="all" />
+  </head>
+  <body>
+    <main class="main">
+      <div class="bird-box" onclick="toggleTheme()">
+        <div class="b-hairs">
+          <span class="hair"></span>
+        </div>
+        <div class="b-face">
+          <div class="eye">
+            <div class="eye-lid">
+              <span></span>
+            </div>
+          </div>
+        </div>
+        <div class="b-neck"></div>
+        <div class="b-body"></div>
+        <div class="b-wing"></div>
+        <div class="b-leg"></div>
+        <div class="b-tail">
+          <span class="tail"></span>
+        </div>
+      </div>
+    </main>
+    <script>
+      function toggleTheme() {
+        document.body.classList.toggle("dark");
+      }
+    </script>
+  </body>
+</html>
